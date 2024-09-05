@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- this specifies the character set encoding.  -->
+        <!-- without this tag our fonts might not load properly --> 
+        <meta charset = "utf-8"/>
+
+        <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+        <meta name = "viewport" content = "width=device-width, initial-scale=1"/>
+
+        <!-- the title tag shows up in the browser tab -->
+        <title>HTML Elements 101</title>
+
+        <!-- This is how we make an internal stylesheet -->
+         <style>
+            p {
+                color:lightseagreen
+            }
+
+            h2,h3,h4 {
+                background-color: #ff27cd
+            }
+
+            a {
+                color: rgb(241, 255, 119);
+                background-color: rgba(0,0,0,0.5);
+            }
+         </style>
+
+    </head>
+    <body>
+        <!-- everything inside the body tag shows up to the user unless modified to not be visible with css -->
+        text without markup still shows up 
+        <!-- ONLY 1 H1 PER PAGE -->
+        <h1 id="#top">
+            Heading 1 is the most important text on the page. We should only have one per page
+        </h1>
+
+        <h2>
+            Heading 2. As the numbers get bigger the text gets smaller, so does the weight
+        </h2>
+
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <!-- horizontal rule aka page divider -->
+        <hr />
+        <!-- misc text will be a p tag -->
+        <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+            <br/> totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et<br/> quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vo
+            <div>luptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</div>magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, 
+            <em>consectetur</em>, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+            Ut <strong>ad minima veniam</strong>, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+            <span style="color:blueviolet"; display: block;>vel illum qui dolorem eum fugiat</span> 
+            quo voluptas nulla pariatur?
+            <!-- span will override all previous css -->
+        
+        </p>
+
+        <h2>Buttermilk Pancakes</h2>
+        <p>These are the best pancakes in the world!</p>
+        <!-- image from website -->
+        <img src="https://www.allrecipes.com/thmb/UXv_24LIE376MRgVvZDBJKa856w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/24530-ButtermilkPancakes-II-mfs-4X3-3385-b9e08648074145d18c538731c2be4215.jpg"/>
+        
+        <!-- local image same folder -->
+        <img src="pancakes.jpg" width="100px" height="300px"/>
+
+        <!-- image in a subfolder -->
+        <img src="img/pancakes_copy.jpg"/>
+
+        <hr/>
+        <!-- # as dummy link -->
+        <a href="#">Dummy Link using #</a>
+        <a href="about/index.html">About Page</a>
+        <!-- linking to an element on the same page by ID, # means ID -->
+        <a href="#top">Back to top</a>
+
+        <!-- unordered list aka order doesn't matter! bullet points -->
+        <ul>
+            <li>Ingredient</li>
+            <li>Ingredient</li>
+            <li>Ingredient
+                <ol>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                    <li>Subitem 3</li>
+                </ol>
+            </li>
+            <li>Ingredient</li>
+        </ul>
+
+        <!-- sometimes order matters, use an ordered list, numbered -->
+        <ol>
+            <li>Ingredient</li>
+            <li>Ingredient
+                <ol>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                    <li>Subitem 3</li>
+                </ol>
+            </li>
+            <li>Ingredient</li>
+            <li>Ingredient</li>
+        </ol>
+
+    </body>
+</html>
