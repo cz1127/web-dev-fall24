@@ -1,0 +1,9 @@
+I liked how the article talked about the importance of really communicating with everyone on your team.
+When it comes to designing something big, it's definitely important to not only talk to the fellow designers
+and engineers but also the marketing people who know the product/company well.
+
+I also like the note about sketching ideas before implementing. I've been trying to get more into rough
+sketching with a pen and notepad, and it's been super helpful in just flushing out fresh ideas without
+having to worry about how nice it looks. Visualization is so important when designing something big. 
+Upgrading from rough sketches to more put-together wireframe designs is also a good idea. The tool the 
+article linked, Omnigraffle, looks like a neat tool to use for wireframe designs!
