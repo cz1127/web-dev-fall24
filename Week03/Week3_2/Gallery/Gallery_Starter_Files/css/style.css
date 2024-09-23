@@ -1,0 +1,66 @@
+/* @import used for importing external stylesheets */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+/* font-family: "Kaushan Script", cursive; */
+
+/* always go from most general to most specific */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* this is how we gt a full sized fixed centered background */
+  /* don't repeat, center X, center Y, fixed in center */
+  background: url("../img/bg.jpg") no-repeat center center fixed;
+  /* cover: covers entire webpage */
+  background-size: cover;
+}
+
+/* apply default font style at the body tag and all children elements will inherit
+ it unless we override it with another style further down */
+body {
+  font-family: "Kaushan Script", cursive;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  /* when we use inline block to stack things, we have to zero out 
+the font size on the container element */
+  font-size: 0;
+}
+
+.polaroid {
+  /* if you want width to be 300 but have a margin of 20, must subtract 20 from each side */
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  /* WHENEVER YOU WANT A CHILD ELEMENT TO POSITION WITHIN A PARENT
+  ELEMENT, YOU HAVE TO RELATIVE POSITION THAT PARENT NOT ABSOLUTE */
+  position: relative;
+}
+
+/* polaroid img tag */
+/* whenever you style your image, it's usually best practice to 
+make the image take up 100% of its parent element and then give
+the parent a width and height */
+.polaroid img {
+  width: 100%;
+  /* height auto preserves the pixel aspect ratio */
+  height: auto;
+  /* border shorthand is 1- width, style, color */
+  border: 10px solid #ccc;
+  border-bottom-width: 45px;
+}
+
+/* polaroid <p> tag */
+.polaroid p {
+  font-size: 1rem;
+  /* absolutely positioned to its parent class (polaroid),
+  which should be positioned relative */
+  position: absolute;
+  bottom: 14px;
+  width: 280px;
+  text-align: center;
+  color: #333;
+}

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Calistoga&display=swap");
+
+body {
+  background-color: lightyellow;
+  background-image: url("./Happy_smiley_face.png") no-repeat center center fixed;
+}
+
+.calistoga-regular {
+  font-family: "Calistoga", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1,
+h2 {
+  background-color: fuchsia;
+  font-family: "Calistoga";
+}
+
+nav {
+  text-align: center;
+  background-color: aqua;
+}
+
+nav button {
+  font-family: fantasy;
+  background-color: floralwhite;
+  font-size: large;
+  font-weight: 600;
+}
+
+nav a {
+  background-color: floralwhite;
+  font-size: large;
+  font-family: fantasy;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  display: inline-block;
+  back
+}
+
+em {
+    text-align: ;
+}
+
+section {
+    padding: 5%;
+    margin-left: auto;
+}
+
+li {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+figcaption {
+    text-align: center;
+}
+
+section_ {
+    padding: 0%;
+}

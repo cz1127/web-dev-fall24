@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.  -->
+    <!-- without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+
+    <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- the title tag shows up in the browser tab -->
+    <title>Intro CSS</title>
+
+    <!-- INTERNAL style sheet -->
+    <style type="text/css">
+      /* universal selector is commonly used to zero out the browser default margins and padding */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: fuchsia;
+      }
+
+      /* tag selectors aka type or element selectors apply to every instant of that tag on the page */
+      div {
+        background-color: aqua;
+        /* font-family: fantasy; */
+      }
+
+      p {
+        /* 1rem = 16px */
+        margin-top: 1rem;
+        border: 1px solid white;
+        /* 2 values: first: bottom-top; second: left-right */
+        padding: 2rem 1rem;
+        /* 4 values: top right bottom left */
+        border-width: 1px 5px 10px 20px;
+        color: #3b892f;
+        /* most favorite to least favorite */
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      /* anchor tag - links */
+      a {
+        color: rgb(238, 250, 8);
+        text-decoration: none;
+        font-weight: 800;
+      }
+
+      /* pseudo element selector, this is more specific than a tag and this only applied after link has been visited */
+      /* a:visited {
+        color: red;
+      } */
+
+      /* class selectors always start with . inside our style sheet */
+      /* has more weight than regular tags */
+      .silly_text {
+        font-family: cursive;
+        text-decoration: wavy underline;
+        color: cornflowerblue;
+      }
+
+      /* IDs */
+      #really_important {
+        font-weight: 600;
+        font-size: x-large;
+        font-style: oblique;
+        line-height: 50px;
+        text-transform: uppercase;
+      }
+      span {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="silly_text">Testing 123...</div>
+    <p>
+      A p tag just to add <a href="#" class="silly_text">some spacing</a> and to
+      talk about margins and padding more
+    </p>
+    <div>Another div</div>
+    <p id="really_important">
+      Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+      tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
+      minus id quod maxime placeat facere possimus, omnis voluptas assumenda
+      est, omnis dolor repellendus.
+      <!-- inline style is the last thing it reads, so it always has precedence -->
+      <span style="color: blueviolet"
+        >Temporibus autem quibusdam et aut officiis debitis aut rerum
+        necessitatibus saepe eveniet ut et voluptates repudiandae sint et
+        molestiae non recusandae.</span
+      >
+      Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+      voluptatibus maiores alias consequatur aut perferendis doloribus
+      asperiores repellat.
+    </p>
+  </body>
+</html>
