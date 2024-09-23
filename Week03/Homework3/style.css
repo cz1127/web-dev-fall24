@@ -41,26 +41,28 @@ nav a {
 
 .image-container img {
   display: inline-block;
-  back
+  vertical-align: middle;
 }
 
 em {
-    text-align: ;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
 }
 
 section {
-    padding: 5%;
-    margin-left: auto;
+  padding: 5%;
+  margin-left: auto;
 }
 
 li {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 figcaption {
-    text-align: center;
+  text-align: center;
 }
 
 section_ {
-    padding: 0%;
+  padding: 0%;
 }
