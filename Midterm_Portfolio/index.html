@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.  -->
+    <!-- without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+
+    <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- the title tag shows up in the browser tab -->
+    <title>Portfolio Homepage</title>
+
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <h1>C i n d y Z h a o</h1>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false,
+        enableStreamCapture: false,
+      });
+
+      // create a new hydra-synth instance
+      gradient([1, 2, 4])
+        .hue(() => Math.sin(time))
+        .modulateKaleid(osc(20, 0.1, 1))
+        .rotate(50, 0.3)
+        .repeat(4, 5, 0.5, 0.1)
+        .rotate(80, 0.6)
+        .diff(osc(13, 0.5, 5))
+        .kaleid(5)
+        .modulateScale(osc(4, 0.1))
+        .out(o0);
+      render(o0);
+    </script>
+
+    <div class="center-screen">
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+        et quas molestias excepturi sint occaecati cupiditate non provident,
+        similique sunt in culpa qui officia deserunt mollitia animi, id est
+        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
+        cumque nihil impedit quo minus id quod maxime placeat facere possimus,
+        omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
+        quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+        ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
+        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+        voluptatibus maiores alias consequatur aut perferendis doloribus
+        asperiores repellat.
+      </p>
+    </div>
+
+    <div>
+      <nav id="main-nav">
+        <ul class="menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./info.html">Info</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

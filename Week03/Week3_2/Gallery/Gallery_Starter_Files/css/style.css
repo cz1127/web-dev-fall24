@@ -22,9 +22,72 @@ body {
   font-family: "Kaushan Script", cursive;
 }
 
+/* NAVIGATION */
+header {
+  width: 80%;
+  padding: 0 10%;
+  height: 50px;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+  /* increase z-index to pull items forward, decrease to push it back */
+  z-index: 10;
+  background-color: gray;
+  /* flexbox properties */
+  /* flexbox container property */
+  display: flex;
+  flex-direction: row;
+  /* creates space between content in nav bar */
+  justify-content: space-between;
+  align-items: center;
+  background: url("../img/crossline-dots.png");
+}
+
+header h1 {
+  color: blue;
+}
+
+nav ul {
+  /* makes all the li items stack next to eachtoher */
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.1);
+}
+
+nav li {
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  width: 120px;
+}
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  display: block;
+  /* We always define our transition on the initial style */
+  transition: all 1s;
+}
+
+/* Special state for the anchor tag - suedo class selector */
+nav a:hover {
+  /* These properties will animate bc of the transition above */
+  background-color: blueviolet;
+  color: cornflowerblue;
+}
+
+nav a.active {
+  background-color: white;
+  color: red;
+}
+
+/* GALLERY */
 .container {
   width: 900px;
-  margin: 0 auto;
+  margin: 100px auto;
   /* when we use inline block to stack things, we have to zero out 
 the font size on the container element */
   font-size: 0;
@@ -63,4 +126,91 @@ the parent a width and height */
   width: 280px;
   text-align: center;
   color: #333;
+}
+
+/* TRANSFORMS */
+.scaleUp {
+  /* scale up 150% */
+  transform: scale(1.5);
+  /* pulls up 10 positions */
+  z-index: 10;
+}
+
+.scaleX {
+  /* twice as wide in the x direction */
+  /* transform: scaleX(2); */
+  z-index: 10;
+  /* scale(x-pos, y-pos) */
+  transform: scale(2, 1);
+}
+
+.scaleY {
+  /* scales Y direction up by 200% */
+  transform: scale(1, 2);
+}
+
+.skewX {
+  transform: skewX(-20deg);
+}
+
+.skewY {
+  transform: skewY(-20deg);
+}
+
+.skewBoth {
+  transform: skew(10deg, 30deg);
+}
+
+.rotX {
+  transform: rotateX(180deg);
+}
+
+.rotY {
+  transform: rotateY(180deg);
+}
+
+.rotZ {
+  transform: rotateZ(120deg);
+}
+
+.rotateLeft {
+  transform: rotate(-20deg);
+  /*  */
+  transition: all 5s ease-in-out;
+}
+
+/* adding a hover state to rotateLeft */
+.rotateLeft:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+.skewHover {
+  transform: skewX(-30deg);
+  transition: all 5s ease;
+}
+
+/* hover state to skewHover */
+.skewHover:hover {
+  transform: skewX(30deg);
+}
+
+.scaleHover {
+  transform: scale(0.5);
+  transition: all 5s ease-in;
+}
+
+.scaleHover:hover {
+  transform: scale(1.5);
+}
+
+.colorSwap {
+  /* original filter */
+  filter: grayscale(100%);
+  transition: all 2s ease-out;
+}
+
+.colorSwap:hover {
+  /* new filter upon hover */
+  filter: grayscale(0);
 }

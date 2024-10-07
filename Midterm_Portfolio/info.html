@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.  -->
+    <!-- without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+
+    <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- the title tag shows up in the browser tab -->
+    <title>Portfolio Info Page</title>
+
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <h1>C i n d y Z h a o</h1>
+
+    <script>
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false,
+        enableStreamCapture: false,
+      });
+
+      // create a new hydra-synth instance
+      osc(40, 0.1, 1)
+        .modulateRotate(noise(() => Math.sin(time / 5)))
+        .diff(osc(20, 0.5, 0.1))
+        .out(o0);
+      render(o0);
+
+      osc(20, 0.5, 1)
+        .modulateKaleid(src(o0))
+        .repeat(10, 5, 0.7, 0.5)
+        .mult(osc(100, 0.1)) //.luma()
+        .rotate(50, 0.2)
+        .modulateScale(osc(20, 0.1, 0))
+        .out(o1);
+      render(o1);
+    </script>
+
+    <div>
+      <nav id="main-nav">
+        <ul class="menu">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./info.html">Info</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

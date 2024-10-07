@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <!-- this specifies the character set encoding.  -->
+    <!-- without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+
+    <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- the title tag shows up in the browser tab -->
+    <title>Responsive 101</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("main-nav").classList.toggle("show");
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="brand"><a href="#">Logo</a></h1>
+      <!-- hide on desktop, show on mobile -->
+      <span class="mobile-menu" onclick="toggleMenu()">&#8801;</span>
+      <nav id="main-nav">
+        <ul class="menu">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+      <div class="thumb"><img src="./img/dog_hat.jpg" /></div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+/* Global Styles */
+* {
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Desktop styles */
+canvas {
+  /* setting margin and padding to 0 and then using display block will prevent global style */
+  margin: 0;
+  padding: 0;
+  z-index: -100;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  font-family: Anton;
+}
+
+.menu li a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: fuchsia;
+  background-color: rgba(10, 6, 6, 0.3);
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: Anton;
+  color: aliceblue;
+}
+
+.center-screen {
+  grid-area: section;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-screen p {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+  font-size: 18px;
+  font-family: Anton;
+}
