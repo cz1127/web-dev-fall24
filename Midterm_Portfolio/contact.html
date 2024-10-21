@@ -11,6 +11,23 @@
     <!-- the title tag shows up in the browser tab -->
     <title>Portfolio Contact Page</title>
 
+    <script>
+      function toggleActive() {
+        const element = document.getElementById("changeMe");
+        if(element.classList.contains("active")) {
+          element.classList.remove("active")
+          element.innerHTML="Hi! Click home to go home.";
+        }
+        else {
+          element.classList.add("active");
+          element.innerHTML="C i n d y Z h a o";
+        }
+      }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="./css/imgs/cat_favicon.ico">
+
+    <!-- font 1 -->
     <script src="https://unpkg.com/hydra-synth"></script>
   </head>
   <body>
@@ -22,7 +39,18 @@
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
-    <h1>C i n d y Z h a o</h1>
+
+    <!-- font 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <h1 id="changeMe" onClick="toggleActive()" class="active">
+      C i n d y Z h a o
+    </h1>
 
     <script>
       var hydra = new Hydra({
@@ -32,19 +60,17 @@
       });
 
       // create a new hydra-synth instance
-      osc(20, 0.5, 0.5).kaleid(3).repeat(5, 5).modulate(osc(50, 0.2)).out(o0);
+      osc(50, 0.5, 0.1)
+        .modulateRotate(osc(50, 0.1))
+        .kaleid(3, 0.6)
+        .modulateScale(osc(10, 0.4))
+        .out(o0);
+      render(o0);
 
       src(o0)
-        .rotate(120, 0.5)
-        .scale(() => Math.sin(time))
-        .diff(shape(3, () => Math.sin(time), 0.1))
-        .rotate(190, 0.7)
-        .scale(() => Math.sin(time))
-        .repeat(4, 5, 0.5, 0.3)
-        .mask(shape(3, () => Math.sin(time)))
-        .repeat(5, 5)
-        .rotate(180, 0.4)
         .scale(0.3)
+        .layer(osc(30, 0.1, 1.5).mask(shape(4, 0.5, 0)))
+        .rotate(50, 0.5)
         .out(o1);
       render(o1);
     </script>
@@ -58,6 +84,37 @@
           <li><a href="./contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
+
+    <div class="center-contacts">
+      <ul class="contacts">
+        <li>
+          <a href="https://blank.page/">
+            <img src="./css/imgs/email.png" style="width: 30px; height: 30px" />
+          </a>
+        </li>
+        <li>
+          <a href="https://blank.page/">
+            <img
+              src="./css/imgs/instagram.png"
+              style="width: 30px; height: 30px"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://blank.page/">
+            <img
+              src="./css/imgs/linkedin.png"
+              style="width: 30px; height: 30px"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://blank.page/">
+            <img src="./css/imgs/github.png" style="width: 30px; height: 30" />
+          </a>
+        </li>
+      </ul>
     </div>
   </body>
 </html>

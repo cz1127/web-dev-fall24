@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modals</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style type="text/css">
+      a.button {
+        text-decoration: none;
+        color: white;
+        background-color: darkorchid;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        margin-right: 1rem;
+      }
+
+      /* Modal Styles */
+      .overlay {
+        /* stretch the overlay div to cover the entire screen */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* transparent background color */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* make sure our modal shows up in front of everything else on the screen */
+        z-index: 9999;
+        /* starting state opacity of 0% */
+        opacity: 0%;
+        /* we always define our transitions on the starting state */
+        transition: opacity 400ms ease-in;
+        /* our modal is there just 0% opacity; we don't want to be able to click on anything in our invisible modal */
+        pointer-events: none;
+      }
+
+      /* target - recieving end of anchor tag */
+      .overlay:target {
+        opacity: 1;
+        /* re-allow all pointer events */
+        pointer-events: auto;
+      }
+
+      /* > means direct child descendant in class */
+      .overlay > div {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        position: relative;
+        /* auto - centered horizontally */
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .close {
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        color: black;
+        /* position close button on top right corner */
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        text-decoration: none;
+        transition: all 1s ease;
+        border-top-right-radius: 10px;
+      }
+
+      .close:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .button_bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 2rem 1rem;
+      }
+
+      .scrollable {
+        height: 200px;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Hello Modals!</h1>
+    <a href="#info" class="button">Link to Modal 1</a>
+    <a href="#info2" class="button">Link to Modal 2</a>
+
+    <!-- Modal 1 -->
+    <!-- parent/wrapper div; it recieves the ID and will be our transparent overlay -->
+    <div id="info" class="overlay">
+      <!-- this child div is the modal box itself -->
+      <div>
+        <!-- close button, absolutely positioned to top right corner -->
+        <a href="#close" class="close">X</a>
+        <!-- you can put whatever HTML elements you need to inside the modal inner div -->
+        <h2>Title of the modal 1</h2>
+        <div class="scrollable">
+          <p>Look at me! I am modal number 1</p>
+          <p>This modal has scrollable content</p>
+          <p>
+            On the other hand, we denounce with righteous indignation and
+            dislike men who are so beguiled and demoralized by the charms of
+            pleasure of the moment, so blinded by desire, that they cannot
+            foresee the pain and trouble that are bound to ensue; and equal
+            blame belongs to those who fail in their duty through weakness of
+            will, which is the same as saying through shrinking from toil and
+            pain. These cases are perfectly simple and easy to distinguish. In a
+            free hour, when our power of choice is untrammelled and when nothing
+            prevents our being able to do what we like best, every pleasure is
+            to be welcomed and every pain avoided. But in certain circumstances
+            and owing to the claims of duty or the obligations of business it
+            will frequently occur that pleasures have to be repudiated and
+            annoyances accepted. The wise man therefore always holds in these
+            matters to this principle of selection: he rejects pleasures to
+            secure other greater pleasures, or else he endures pains to avoid
+            worse pains
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- END Modal 1 -->
+
+    <!-- Modal 2 -->
+    <!-- parent/wrapper div; it recieves the ID and will be our transparent overlay -->
+    <div id="info2" class="overlay">
+      <!-- this child div is the modal box itself -->
+      <div>
+        <!-- close button, absolutely positioned to top right corner -->
+        <a href="#close" class="close">X</a>
+        <!-- you can put whatever HTML elements you need to inside the modal inner div -->
+        <h2>Title of the modal 2</h2>
+        <p>Look at me! I am modal number 2</p>
+        <div class="button-bar">
+          <a href="#info2" class="button">Accept</a>
+          <a href="#close" class="button">Decline</a>
+        </div>
+      </div>
+    </div>
+    <!-- END Modal 2 -->
+  </body>
+</html>

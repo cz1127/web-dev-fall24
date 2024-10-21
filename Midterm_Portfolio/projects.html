@@ -11,18 +11,46 @@
     <!-- the title tag shows up in the browser tab -->
     <title>Portfolio Projects Page</title>
 
+    <script>
+      function toggleActive() {
+        const element = document.getElementById("changeMe");
+        if(element.classList.contains("active")) {
+          element.classList.remove("active")
+          element.innerHTML="Hi! Click home to go home.";
+        }
+        else {
+          element.classList.add("active");
+          element.innerHTML="C i n d y Z h a o";
+        }
+      }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="./css/imgs/cat_favicon.ico">
+
     <script src="https://unpkg.com/hydra-synth"></script>
   </head>
   <body>
     <link rel="stylesheet" href="./css/style.css" />
 
+    <!-- font 1 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
-    <h1>C i n d y Z h a o</h1>
+
+    <!-- font 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <h1 id="changeMe" onClick="toggleActive()" class="active">
+      C i n d y Z h a o
+    </h1>
 
     <script>
       var hydra = new Hydra({
@@ -61,6 +89,65 @@
           <li><a href="./contact.html">Contact</a></li>
         </ul>
       </nav>
+    </div>
+
+    <div class="scroll-container">
+      <div class="thumb">
+        <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+        <div class="mask">
+          <h2>Portfolio Title</h2>
+          <p>description blah blah</p>
+          <a class="info" href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+        <div class="mask">
+          <h2>Project Title</h2>
+          <p>description blah blah</p>
+          <a class="info" href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+        <div class="mask">
+          <h2>Project Title</h2>
+          <p>description blah blah</p>
+          <a class="info" href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+        <div class="mask">
+          <h2>Project Title</h2>
+          <p>description blah blah</p>
+          <a class="info" href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+        <div class="mask">
+          <h2>Project Title</h2>
+          <p>description blah blah</p>
+          <a class="info" href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="thumb">
+        <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+        <div class="mask">
+          <h2>Project Title</h2>
+          <p>description blah blah</p>
+          <a class="info" href="#">Learn More</a>
+        </div>
+      </div>
+      <!-- <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" />
+      <img src="./css/imgs/dog_hat.jpg" alt="Thing" /> -->
     </div>
   </body>
 </html>
