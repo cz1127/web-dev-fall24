@@ -80,8 +80,7 @@ h1 {
 .center-flip {
   display: flex;
   justify-content: center;
-  align-content: center;
-  gap: 20px; /* Add spacing between cards */
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -94,17 +93,17 @@ h1 {
   height: 400px;
 }
 
-.flip-card-inner {
+.flip-card-info {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 2s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-info {
   transform: rotateY(180deg);
 }
 
@@ -113,13 +112,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: absolute; /* overlap perfectly */
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden;  /* hide back face when flipped */
 }
 
 .flip-card-front {
+  /* if no image */
   background-color: #bbb;
   color: black;
 }
@@ -127,7 +127,7 @@ h1 {
 .flip-card-back {
   background-color: fuchsia;
   color: white;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* invert backside to correctly orient it for hover flip */
   flex-direction: column;
 }
 
@@ -152,7 +152,7 @@ h1 {
 /* Styling each image container (thumb) */
 .thumb {
   display: inline-block; /* Ensures the images appear in a horizontal row */
-  position: relative; /* Necessary for positioning the mask over the image */
+  position: relative; 
   width: 300px;
   height: 300px;
   margin-right: 10px; /* Adds space between each image */
@@ -166,7 +166,7 @@ h1 {
   transition: opacity 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
-/* Mask styling (overlay text) */
+/* Mask styling */
 .thumb .mask {
   visibility: hidden; /* Initially hidden */
   opacity: 0;
@@ -179,7 +179,7 @@ h1 {
   color: fuchsia;
   font-size: 20px;
   text-align: center;
-  display: flex; /* Ensures Flexbox works */
+  display: flex; 
   align-items: center; /* Centers content vertically */
   justify-content: center; /* Centers content horizontally */
   flex-direction: column; /* Stacks items vertically */
@@ -498,7 +498,6 @@ h1 {
     text-decoration: none;
     padding: 5px;
     margin: 10px 0;
-    /* overflow: hidden; */
   }
 
   .contacts li img {
