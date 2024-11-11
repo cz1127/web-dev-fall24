@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Content (math + arrays)</title>
+    <script type="text/javascript">
+      // make an array of image sources to choose from at random when the page loads
+      var arrImg = [
+        "https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg",
+        "https://media.npr.org/assets/img/2014/12/14/ap798386886673_custom-874f02be53ae33c23d21b505066e52895eab4651.jpg?s=1600&c=85&f=webp",
+        "https://clarklandfarm.com/img/animals/goats_6.jpg",
+      ];
+
+      // random links to correspond to each image
+      var arrLinks = [
+        "https://en.wikipedia.org/wiki/Goat",
+        "https://www.npr.org/sections/goatsandsoda/2014/12/05/368772449/how-can-you-tell-if-your-goat-is-happy-now-we-know",
+        "https://clarklandfarm.com/goats.html",
+      ];
+
+      // helper function for picking a random number between 0 and max
+      function randomIndex(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      // write our own image function outside of our event listeners
+      // remember not to call this function until the DOM loads
+      function loadRandomImage() {
+        var index = randomIndex(arrImg.length);
+        var img = document.getElementById("animal");
+        var link = document.getElementById("dynamicLink");
+
+        // assign the src attribute of the image element to a string stored in a random index slot in our image array
+        img.src = arrImg[index];
+        // assign the href from our links array and random index
+        link.href = arrLinks[index];
+      }
+
+      /*
+      // wait for the page to lfinish loading the body content before we try and store any elements as JS variables
+      document.addEventListener("DOMContentLoaded", function () {
+        // assign elements to variables
+        // call functions we want to run on load
+        // add event listeners to elements like buttons on our page
+        loadRandomImage();
+      });
+      */
+
+      // shorter version of the above
+      document.addEventListener("DOMContentLoaded", loadRandomImage);
+    </script>
+  </head>
+
+  <body>
+    <a href="#" id="dynamicLink" target="_blank">
+      <img src="" id="animal" />
+    </a>
+  </body>
+</html>

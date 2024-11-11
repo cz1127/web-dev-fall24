@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <!-- this specifies the character set encoding.  -->
+        <!-- without this tag our fonts might not load properly --> 
+        <meta charset = "utf-8"/>
+
+        <!-- the viewport tag sets the initial scale and ensures proper responsive behavior -->
+         <meta name = "viewport" content = "width=device-width, initial-scale=1"/>
+
+        <!-- the title tag shows up in the browser tab -->
+        <title>HTML Dynamic DOM, 2 Ways</title>
+
+        <style>
+            #content {
+                color: red;
+            }
+
+            @media screen and (max-width: 767px) {
+                #content {
+                    color: blue;
+                }
+            }
+        </style>
+
+        <!-- <script>
+            // declaring and assigning a global variable
+            const myButton = document.getElementById('clickMe')
+
+            myButton.style = "color: blue";
+        </script> -->
+    </head>
+    <body>
+         <button onclick="addSingleP()" id="clickMe" style="color:red">Add a single P using strings</button>
+         <button onclick="addMultiP(9)">Add multiple P the right way using DOM node</button>
+
+         <div id="content">
+            <p>This is some dummy text that will be overwritten by inner html</p>
+         </div>
+
+        <!-- Loading the script tag after out HTML content is a hacky workaround fo rmaking sure our
+         HTML elements exist before we try and store ot manipulate them with JS -->
+        <script>
+            // declaring and assigning a global variable
+            const myButton = document.getElementById('clickMe')
+            // change the style attribute with javascript
+            myButton.style = "color: blue";
+
+            // globaly declare our content variable, so that we can access it anywhere within out script tag
+            let content;
+
+            // we can assign it later on in our code
+            content = document.getElementById('content')
+            console.log(content)
+
+            function addSingleP() {
+                // innerHTML is anything inside the tag of "content"
+                content.innerHTML = '<p>THis is a poorly instantiated P tag using string trickery</p>'
+            }
+
+            function addMultiP(num) {
+                for (var i = 0; i < num; i++) {
+                    // creaste a p element (node)
+                    var p = document.createElement('p');
+                    // create a text node to go inside
+                    var text = document.createTextNode(
+                        // 'This is paragraph number ' + (i+1) + ' inserted with nodes.'
+
+                        // OR use template literals
+                        `This is paragraph ${i + 1} inserted with nodes.`
+
+                    )
+                    // append the text node to the P element
+                    p.appendChild(text)
+
+                    // append the P element to the P element
+                    content.appendChild(p)
+                
+                }
+            }
+        </script>
+    </body>
+</html>

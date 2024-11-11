@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Homework 10 - Random Story and Color Generator</title>
+  </head>
+  <body>
+    <h1>Hello! Let's generate random stuff.</h1>
+
+    <button id="changeColor">Change Color</button>
+    <button id="changeStory">Generate a Story</button>
+
+    <script>
+      // change background color function
+      function getRandomColor() {
+        let color = "#";
+        const colorVals = [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+        ];
+
+        for (var i = 0; i < 6; i++) {
+          color += colorVals[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+      }
+
+      // change story
+      function getRandomStory() {
+        const content = document.getElementById("content");
+        let story = "";
+        const names = [
+          "Bob Cat",
+          "Hugh Jass",
+          "George Washington",
+          "Rick O'Shea",
+          "Mary Contrary",
+          "Sal Monella",
+          "Holly Wood",
+          "Justin Case",
+          "Manny Kinn",
+          "Anita Bath",
+          "Bea O'Problem",
+          "Sue Permann",
+          "Stan Still",
+          "Barry Cade",
+          "Paige Turner",
+          "Earl E. Bird",
+          "Ben Dover",
+          "Gail Force",
+          "Penny Lane",
+          "Al Beback",
+          "Moe Lester",
+          "Barb Dwyer",
+          "Will Power",
+          "Chris P. Bacon",
+          "Chuck Wagon",
+          "Phil Dirt",
+          "Polly Esther",
+          "Bud Light",
+          "Lou Natic",
+          "Pat Myback",
+        ];
+
+        const adverbs = [
+          "quickly",
+          "silently",
+          "eagerly",
+          "bravely",
+          "gently",
+          "cheerfully",
+          "brightly",
+          "boldly",
+          "rarely",
+          "softly",
+          "easily",
+          "frequently",
+          "slowly",
+          "wildly",
+          "suddenly",
+          "happily",
+          "gracefully",
+          "carefully",
+          "deliberately",
+          "truthfully",
+          "fiercely",
+          "angrily",
+          "mysteriously",
+          "calmly",
+          "steadily",
+          "vividly",
+          "cautiously",
+          "faithfully",
+          "passionately",
+          "awkwardly",
+        ];
+
+        const adjectives = [
+          "brilliant",
+          "zesty",
+          "sparkling",
+          "curious",
+          "mellow",
+          "feisty",
+          "whimsical",
+          "daring",
+          "radiant",
+          "quirky",
+          "luminous",
+          "serene",
+          "tenacious",
+          "vibrant",
+          "witty",
+          "bold",
+          "mysterious",
+          "jovial",
+          "snazzy",
+          "peculiar",
+          "gleaming",
+          "nimble",
+          "fluffy",
+          "intrepid",
+          "jazzy",
+          "lofty",
+          "spunky",
+          "sassy",
+          "bubbly",
+          "gleeful",
+        ];
+
+        const verbs = [
+          "bounces",
+          "juggles",
+          "whispers",
+          "sparkles",
+          "glides",
+          "sprints",
+          "twirls",
+          "gobbles",
+          "doodles",
+          "chuckles",
+          "snoozes",
+          "buzzes",
+          "wiggles",
+          "darts",
+          "ambles",
+          "whizzes",
+          "frolics",
+          "plunges",
+          "scoots",
+          "zaps",
+          "ambles",
+          "grumbles",
+          "tinkers",
+          "zooms",
+          "flaps",
+          "swooshes",
+          "slinks",
+          "chomps",
+          "swivels",
+          "murmurs",
+        ];
+
+        const conjunctions = [
+          "and",
+          "but",
+          "or",
+          "nor",
+          "for",
+          "so",
+          "yet",
+          "although",
+          "because",
+          "since",
+          "unless",
+          "if",
+          "while",
+          "when",
+          "whereas",
+          "as",
+          "though",
+          "before",
+          "after",
+          "until",
+          "whether",
+          "either",
+          "neither",
+          "both",
+          "not only",
+          "but also",
+          "even though",
+          "in case",
+          "so that",
+          "provided that",
+          "as long as",
+          "once",
+          "rather than",
+        ];
+
+        for (var i = 0; i < Math.floor(Math.random() * 25); i++) {
+          story += adjectives[Math.floor(Math.random() * 30)];
+          story += " ";
+          story += names[Math.floor(Math.random() * 30)];
+          story += " ";
+          story += verbs[Math.floor(Math.random() * 30)];
+          story += " ";
+          story += adverbs[Math.floor(Math.random() * 30)];
+          story += " ";
+          story += conjunctions[Math.floor(Math.random() * 33)];
+          story += " ";
+        }
+
+        return story;
+      }
+
+      // color changer event listener
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("changeColor")
+          .addEventListener("click", function () {
+            document.body.style.backgroundColor = getRandomColor();
+          });
+      });
+
+      // story changer event listener
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("changeStory")
+          .addEventListener("click", function () {
+            document.getElementById("content").innerHTML = getRandomStory();
+          });
+      });
+    </script>
+
+    <style>
+      #content {
+        width: 50%;
+        height: 100vh;
+        margin: 0 auto; /* Centers horizontally */
+        text-align: center;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 25px;
+        padding: 20px;
+      }
+    </style>
+    <div id="content"></div>
+  </body>
+</html>

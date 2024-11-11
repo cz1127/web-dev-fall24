@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Arrays</title>
+
+    <script type="text/javascript">
+      // declare a variable called months without assigning it a value or a type
+      let months = [
+        "January",
+        "Februrary",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      console.log(months.lenth);
+
+      // .pop() removes and returns last item in arr
+      var lastMonth = months.pop();
+      console.log(months.length, lastMonth);
+
+      // what if we wanted to log the second month in our array
+      console.log(months[1]);
+
+      // what if we want to add 'December' back into the back of our array
+      console.log(months);
+      months.push(lastMonth);
+      console.log(months);
+
+      months.push("Not a real month");
+      console.log(months);
+
+      // use a loop to list out all the values in our array
+      for (var i = 0; i < months.length; i++) {
+        console.log(`index number: ${i}. The value is ${months[i]}`);
+      }
+
+      // ranged for loop
+      for (val of months) {
+        console.log(val);
+      }
+
+      // loop through an array backwards and delete the last item using .pop()
+      // for (var i = months.length; i > 0; i--) {
+      //   var deleted_month = months.pop();
+      //   console.log(
+      //     `Deleted: ${deleted_month}, the new array length is ${months.length}`
+      //   );
+      // }
+      // console.log(months);
+
+      // pick a random number between 0 and our months.length and log that item at that index
+      var rand_ind = Math.floor(Math.random() * months.length);
+      console.log(`Random val in months: ${months[rand_ind]}`);
+    </script>
+  </head>
+  <body></body>
+</html>
