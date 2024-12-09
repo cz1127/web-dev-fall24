@@ -1,0 +1,297 @@
+body {
+  font-family: "Parkinsans", sans-serif;
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* div,
+button,
+label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* Specific class for Parkinsans */
+.parkinsans-cool {
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500; /* Removed px */
+  font-style: normal;
+}
+
+/* Use main as the parent container */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Space between TaskTimer and timer-container */
+}
+
+/* Override Bootstrap-specific styles */
+h1 {
+  font-family: "Parkinsans", sans-serif;
+  color: firebrick;
+  position: absolute;
+  margin: 0;
+  top: 1rem;
+  font-size: 3rem;
+}
+
+/* Timer Container */
+#timer-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Display */
+#timer {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: firebrick;
+}
+
+/* Customization Section */
+#customization {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  color: firebrick;
+}
+
+#customization label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#customization input {
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  width: 100px;
+  text-align: center;
+}
+
+/* Toggle Buttons */
+#toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+#work {
+  background-color: rgb(83, 139, 83);
+}
+
+#work:hover {
+  background-color: #225b2f;
+}
+
+#break {
+  background-color: rgb(242, 221, 107);
+}
+
+#break:hover {
+  background-color: #e0a800;
+}
+
+#todo-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  width: 200px;
+  padding: 10px;
+}
+
+#task-input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#task-input {
+  width: 150px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#add-task {
+  width: 150px;
+  padding: 8px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: firebrick;
+  color: white;
+  cursor: pointer;
+}
+
+#add-task:hover {
+  background-color: darkred;
+}
+
+#task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#task-list input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#spotify-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Break Mode Buttons Container */
+#break-mode-buttons {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Align elements vertically */
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 420px;
+  height: 400px;
+  padding: 20px;
+  line-height: 1.8; /* Increase spacing between lines */
+}
+
+/* Motivational Mode Button */
+#motivational-mode {
+  background-color: firebrick;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0; /* Add spacing between buttons */
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Entertainment Mode Button */
+#entertainment-mode {
+  background-color: antiquewhite;
+  color: firebrick;
+  padding: 10px 20px;
+  margin: 10px 0; /* Add spacing between buttons */
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#motivational-mode:hover {
+  background-color: darkred;
+}
+
+#entertainment-mode:hover {
+  background-color: rgb(209, 197, 181);
+}
+
+/* Center Align Button Container */
+#button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Add spacing between elements */
+}
+
+/* Motivational Content Styling */
+#motivational-content {
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  margin-top: 20px; /* Add spacing from buttons */
+  line-height: 1.8; /* Increase line spacing */
+}
+
+/* Entertainment Content Styling */
+#entertainment-content {
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  margin-top: 20px; /* Add spacing from buttons */
+  line-height: 1.8; /* Increase line spacing */
+}
+
+#video-url {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#load-video {
+  margin-top: 10px;
+  background-color: firebrick;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#load-video:hover {
+  background-color: darkred;
+}
+
+#quote-display {
+  font-size: 1.2rem;
+  color: firebrick;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Center-align the video frame */
+#video-frame {
+  margin-top: 20px; /* Add spacing above the video */
+  display: block; /* Ensure it behaves as a block element */
+  align-self: center; /* Center the video frame within the flex container */
+  max-width: 100%;
+  border-radius: 8px; /* Add rounded corners */
+}
