@@ -195,7 +195,7 @@
       ];
 
       let timerInterval;
-      let timeLeft;
+      let timeLeft = 0; // Initialize to 0
 
       // Format time HH:MM:SS or MM:SS
       function formatTime(seconds) {
@@ -218,6 +218,12 @@
       function updateTimerDisplay() {
         timerElement.textContent = formatTime(timeLeft);
       }
+
+      // Set initial timer display 00:00 on page load
+      window.addEventListener("load", () => {
+        timeLeft = 0; // Initialize to 0 seconds
+        updateTimerDisplay(); // Display "00:00" initially
+      });
 
       // Clear homepage UI for break mode
       function activateBreakMode() {

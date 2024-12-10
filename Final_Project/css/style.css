@@ -289,9 +289,116 @@ h1 {
 
 /* Center-align the video frame */
 #video-frame {
-  margin-top: 20px; /* Add spacing above the video */
+  margin-top: 20px;
   display: block; /* Ensure it behaves as a block element */
   align-self: center; /* Center the video frame within the flex container */
   max-width: 100%;
   border-radius: 8px; /* Add rounded corners */
+}
+
+/* Phone Size Media Query */
+@media only screen and (max-width: 767px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    padding: 20px;
+    height: auto; /* Allow scrolling */
+  }
+
+  h1 {
+    font-size: 2rem; /* Reduce size of the title */
+    top: 10px;
+    position: static; /* Flow naturally at the top */
+    margin-bottom: 20px; /* Add spacing below */
+  }
+
+  #timer-container {
+    width: 90%; /* Make it responsive to screen size */
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #timer {
+    font-size: 2rem;
+  }
+
+  #customization {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 10px; /* Reduce space between inputs */
+  }
+
+  #customization label {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  #customization input {
+    font-size: 0.9rem;
+    width: 80px; /* Narrower inputs */
+    text-align: center;
+  }
+
+  #toggle {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add spacing between buttons */
+  }
+
+  .toggle-btn {
+    font-size: 0.9rem; /* Reduce button font size */
+    padding: 8px 15px; /* Adjust button padding */
+  }
+
+  #todo-container,
+  #spotify-container {
+    position: static; /* Remove fixed positioning for stacking */
+    width: 90%; /* Make them responsive to screen width */
+    margin-bottom: 20px; /* Add spacing between stacked items */
+  }
+
+  #task-input-container {
+    flex-direction: column; /* Stack task input and button vertically */
+    align-items: center;
+    gap: 10px; /* Add spacing between input and button */
+  }
+
+  #task-input {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  #add-task {
+    width: 100%; /* Full width for button */
+  }
+
+  #task-list {
+    padding: 10px;
+  }
+
+  #break-mode-buttons {
+    width: 100%; /* Full width */
+    height: auto; /* Allow flexible height */
+    padding: 15px; /* Adjust padding */
+    /* margin-top: 20px;  */
+  }
+
+  #button-container {
+    gap: 10px; /* Adjust spacing between buttons */
+  }
+
+  #motivational-content,
+  #entertainment-content {
+    margin-top: 15px; /* Adjust spacing */
+  }
+
+  #quote-display {
+    font-size: 1rem; /* Reduce font size */
+  }
+
+  #video-frame {
+    width: 100%; /* Adjust to fit smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
 }
